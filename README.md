@@ -5,6 +5,7 @@
 - Next.js
 - TypeScript
 - Styled Components
+- AWS Amplify
 
 ## Build
 
