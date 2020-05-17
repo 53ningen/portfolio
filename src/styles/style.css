@@ -1,0 +1,39 @@
+html,
+body {
+  display: block;
+  width: 100%;
+  color: rgb(20, 23, 26);
+  line-height: 1.3125;
+
+  overscroll-behavior-y: none;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Ubuntu, 'Helvetica Neue', sans-serif;
+}
+
+html,
+body,
+body > div:first-child {
+  margin: 0;
+}
+
+a {
+  color: rgb(101, 119, 134);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(101, 119, 134);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+svg {
+  fill: currentColor;
+}
