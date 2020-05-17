@@ -1,27 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
-interface Props {
+type Props = {
   onClick?: (e: React.MouseEvent<HTMLElement>) => void
   path: string
 }
 
-export default class HeaderPhoto extends React.Component<Props, {}> {
-  render() {
-    return (
-      <Wrapper>
-        <Block />
-        <Cover
-          draggable={true}
-          onClick={this.props.onClick}
-          path={this.props.path}
-        >
-          <Img draggable={true} src={this.props.path} />
-        </Cover>
-      </Wrapper>
-    )
-  }
-}
+const HeaderPhoto: React.FC<Props> = (props) => (
+  <Wrapper>
+    <Block />
+    <Cover draggable={true} onClick={props.onClick} path={props.path}>
+      <Img draggable={true} src={props.path} />
+    </Cover>
+  </Wrapper>
+)
+
+export default HeaderPhoto
 
 const Wrapper = styled.div`
   position: relative;

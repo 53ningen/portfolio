@@ -1,88 +1,88 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Status as StatusModel } from '../../models/Status'
 import AvatarIcon from '../commons/AvatorIcon'
-import IconText from '../commons/IconText'
 import {
-  ReplyIcon,
-  RetweetIcon,
   FavoriteBorderIcon,
   LinkIcon,
+  ReplyIcon,
+  RetweetIcon,
 } from '../commons/Icon'
-import { Status as StatusModel } from '../../models/Status'
+import IconText from '../commons/IconText'
 
-interface Props {
+type Props = {
   status: StatusModel
 }
 
-export default class Status extends React.Component<Props, {}> {
-  render() {
-    var avatarWrapper = (
-      <AvatarWrapper>
-        <AvatarIcon
-          iconPath={this.props.status.icon || 'images/avatar.jpg'}
-        ></AvatarIcon>
-      </AvatarWrapper>
-    )
-    if (this.props.status.url) {
-      avatarWrapper = (
-        <a href={this.props.status.url || ''} target="_blank">
-          {avatarWrapper}
-        </a>
-      )
-    }
-
-    var namesWrapper = (
-      <NamesWrapper>
-        {' '}
-        <Name>{this.props.status.name}</Name>
-        <ScreenName>{this.props.status.screenName || ''}</ScreenName>
-      </NamesWrapper>
-    )
-    if (this.props.status.url) {
-      namesWrapper = (
-        <a href={this.props.status.url || ''} target="_blank">
-          {namesWrapper}
-        </a>
-      )
-    }
-    return (
-      <Wrapper id={this.props.status.id}>
+const Status: React.FC<Props> = (props) => {
+  var avatarWrapper = (
+    <AvatarWrapper>
+      <AvatarIcon
+        iconPath={props.status.icon || 'images/avatar.jpg'}
+      ></AvatarIcon>
+    </AvatarWrapper>
+  )
+  if (props.status.url) {
+    avatarWrapper = (
+      <a href={props.status.url || ''} target="_blank">
         {avatarWrapper}
-        <DetailsWrapper>
-          <MetadataWrapper>
-            {namesWrapper}
-            <span style={{ color: 'rgb(101, 119, 134)', marginRight: '5px' }}>
-              ·
-            </span>
-            <a href={'#' + this.props.status.id}>
-              <UpdatedDate>{this.props.status.updated}</UpdatedDate>
-            </a>
-          </MetadataWrapper>
-          <TextWrapper>{this.props.status.text}</TextWrapper>
-          <FooterWrapper>
-            <IconWrapper>
-              <IconText icon={<ReplyIcon />}></IconText>
-            </IconWrapper>
-            <IconWrapper>
-              <IconText icon={<RetweetIcon />}>
-                {this.props.status.retweetCount || ''}
-              </IconText>
-            </IconWrapper>
-            <IconWrapper>
-              <IconText icon={<FavoriteBorderIcon />}>
-                {' '}
-                {this.props.status.favoriteCount || ''}
-              </IconText>
-            </IconWrapper>
-            <IconWrapper>
-              <IconText icon={<LinkIcon />}></IconText>
-            </IconWrapper>
-          </FooterWrapper>
-        </DetailsWrapper>
-      </Wrapper>
+      </a>
     )
   }
+
+  var namesWrapper = (
+    <NamesWrapper>
+      {' '}
+      <Name>{props.status.name}</Name>
+      <ScreenName>{props.status.screenName || ''}</ScreenName>
+    </NamesWrapper>
+  )
+  if (props.status.url) {
+    namesWrapper = (
+      <a href={props.status.url || ''} target="_blank">
+        {namesWrapper}
+      </a>
+    )
+  }
+  return (
+    <Wrapper id={props.status.id}>
+      {avatarWrapper}
+      <DetailsWrapper>
+        <MetadataWrapper>
+          {namesWrapper}
+          <span style={{ color: 'rgb(101, 119, 134)', marginRight: '5px' }}>
+            ·
+          </span>
+          <a href={'#' + props.status.id}>
+            <UpdatedDate>{props.status.updated}</UpdatedDate>
+          </a>
+        </MetadataWrapper>
+        <TextWrapper>{props.status.text}</TextWrapper>
+        <FooterWrapper>
+          <IconWrapper>
+            <IconText icon={<ReplyIcon />}></IconText>
+          </IconWrapper>
+          <IconWrapper>
+            <IconText icon={<RetweetIcon />}>
+              {props.status.retweetCount || ''}
+            </IconText>
+          </IconWrapper>
+          <IconWrapper>
+            <IconText icon={<FavoriteBorderIcon />}>
+              {' '}
+              {props.status.favoriteCount || ''}
+            </IconText>
+          </IconWrapper>
+          <IconWrapper>
+            <IconText icon={<LinkIcon />}></IconText>
+          </IconWrapper>
+        </FooterWrapper>
+      </DetailsWrapper>
+    </Wrapper>
+  )
 }
+
+export default Status
 
 const Wrapper = styled.article`
   padding: 10px 15px;

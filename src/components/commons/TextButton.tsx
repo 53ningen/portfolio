@@ -1,19 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-interface Props {
+type Props = {
   iconPath?: string
 }
 
-export default class TextButton extends React.Component<Props, {}> {
-  render() {
-    return (
-      <Wrapper role="button">
-        <Text>{this.props.children}</Text>
-      </Wrapper>
-    )
-  }
-}
+const TextButton: React.FC<Props> = (props) => (
+  <Wrapper role="button">
+    <Text>{props.children}</Text>
+  </Wrapper>
+)
+
+export default TextButton
 
 const Wrapper = styled.div`
   min-width: calc(62.79px);

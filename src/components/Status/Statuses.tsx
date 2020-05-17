@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Status from './Status'
 import { Status as StatusModel } from '../../models/Status'
+import Status from './Status'
 
 interface Props {
   statuses: StatusModel[]

@@ -1,9 +1,8 @@
+import Amplify from 'aws-amplify'
 import { AppProps } from 'next/app'
 import { Router } from 'next/dist/client/router'
-import styled from 'styled-components'
 import 'normalize.css'
-import Amplify from 'aws-amplify'
-
+import styled from 'styled-components'
 import awsconfig from '../aws-exports'
 import * as gtag from '../libs/gtag'
 import '../styles/style.css'
@@ -11,7 +10,7 @@ import '../styles/style.css'
 Amplify.configure(awsconfig)
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout>
       <Component {...pageProps} />

@@ -1,24 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-interface Props {
+type Props = {
   onClick?: (e: React.MouseEvent<HTMLElement>) => void
   iconPath: string
 }
 
-interface State {}
+const AvatorIcon: React.FC<Props> = (props) => (
+  <Wrapper>
+    <MarginBottom />
+    <Icon iconPath={props.iconPath} />
+    <Hover />
+  </Wrapper>
+)
 
-export default class AvatorIcon extends React.Component<Props, State> {
-  render() {
-    return (
-      <Wrapper>
-        <MarginBottom />
-        <Icon iconPath={this.props.iconPath} />
-        <Hover />
-      </Wrapper>
-    )
-  }
-}
+export default AvatorIcon
 
 const Wrapper = styled.div`
   width: 100%;

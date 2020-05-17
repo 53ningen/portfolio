@@ -3,27 +3,25 @@ import styled from 'styled-components'
 
 const margin = '10px'
 
-interface Props {
+type Props = {
   marginLeft?: boolean
   marginTop?: boolean
   marginBottom?: boolean
   marginRight?: boolean
 }
 
-export default class Layout extends React.Component<Props, {}> {
-  render() {
-    return (
-      <Wrapper
-        marginLeft={this.props.marginLeft}
-        marginTop={this.props.marginTop}
-        marginBottom={this.props.marginBottom}
-        marginRight={this.props.marginRight}
-      >
-        {this.props.children}
-      </Wrapper>
-    )
-  }
-}
+const Layout: React.FC<Props> = (props) => (
+  <Wrapper
+    marginLeft={props.marginLeft}
+    marginTop={props.marginTop}
+    marginBottom={props.marginBottom}
+    marginRight={props.marginRight}
+  >
+    {props.children}
+  </Wrapper>
+)
+
+export default Layout
 
 const Wrapper = styled.div<Props>`
   border: 0;

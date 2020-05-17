@@ -1,47 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import AvatorIcon from '../commons/AvatorIcon'
-import HeaderButtons from './HeaderButtons'
-import IconText from '../commons/IconText'
-import { LocationIcon, CakeIcon, WorkIcon, LinkIcon } from '../commons/Icon'
 import { Profile } from '../../models/Profile'
+import AvatorIcon from '../commons/AvatorIcon'
+import { CakeIcon, LinkIcon, LocationIcon, WorkIcon } from '../commons/Icon'
+import IconText from '../commons/IconText'
+import HeaderButtons from './HeaderButtons'
 
-interface Props {
+type Props = {
   profile: Profile
 }
 
-export default class HeaderInfo extends React.Component<Props, {}> {
-  render() {
-    return (
-      <Wrapper>
-        <ButtonsWrapper>
-          <AvatarWrapper>
-            <AvatorIcon iconPath="images/avatar.jpg" />
-          </AvatarWrapper>
-          <HeaderButtons />
-        </ButtonsWrapper>
-        <NamesWrapper>
-          <Name>{this.props.profile.name}</Name>
-          <ScreenName>{this.props.profile.screenName}</ScreenName>
-        </NamesWrapper>
-        <Description>{this.props.profile.description}</Description>
-        <IconTextsWrapper>
-          <IconText icon={<LocationIcon />}>
-            {this.props.profile.location}
-          </IconText>
-          <IconText icon={<WorkIcon />}>{this.props.profile.company}</IconText>
-          <IconText icon={<CakeIcon />}>{this.props.profile.birthday}</IconText>
-          <IconText icon={<LinkIcon />}>
-            <a href={this.props.profile.url} target="_blank">
-              {this.props.profile.displayUrl}
-            </a>
-          </IconText>
-        </IconTextsWrapper>
-      </Wrapper>
-    )
-  }
-}
+const HeaderInfo: React.FC<Props> = (props) => (
+  <Wrapper>
+    <ButtonsWrapper>
+      <AvatarWrapper>
+        <AvatorIcon iconPath="images/avatar.jpg" />
+      </AvatarWrapper>
+      <HeaderButtons />
+    </ButtonsWrapper>
+    <NamesWrapper>
+      <Name>{props.profile.name}</Name>
+      <ScreenName>{props.profile.screenName}</ScreenName>
+    </NamesWrapper>
+    <Description>{props.profile.description}</Description>
+    <IconTextsWrapper>
+      <IconText icon={<LocationIcon />}>{props.profile.location}</IconText>
+      <IconText icon={<WorkIcon />}>{props.profile.company}</IconText>
+      <IconText icon={<CakeIcon />}>{props.profile.birthday}</IconText>
+      <IconText icon={<LinkIcon />}>
+        <a href={props.profile.url} target="_blank">
+          {props.profile.displayUrl}
+        </a>
+      </IconText>
+    </IconTextsWrapper>
+  </Wrapper>
+)
+
+export default HeaderInfo
 
 const Wrapper = styled.div`
   height: 100%;

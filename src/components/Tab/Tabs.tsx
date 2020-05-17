@@ -1,37 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
-import Tab from './Tab'
 import { TabItem } from '../../models/TabItem'
+import Tab from './Tab'
 
-interface Props {
+type Props = {
   activeItem: TabItem
 }
 
-interface States {}
+const Tabs: React.FC<Props> = (props) => (
+  <Nav>
+    <Tab href="/" isActive={props.activeItem == 'Skills'}>
+      Skills
+    </Tab>
+    <Tab href="/backgrounds" isActive={props.activeItem == 'Backgrounds'}>
+      Backgrounds
+    </Tab>
+    <Tab href="/links" isActive={props.activeItem == 'Links'}>
+      Links
+    </Tab>
+    <Tab href="/hobbies" isActive={props.activeItem == 'Hobbies'}>
+      Hobbies
+    </Tab>
+  </Nav>
+)
 
-export default class Tabs extends React.Component<Props, States> {
-  render() {
-    return (
-      <Nav>
-        <Tab href="/" isActive={this.props.activeItem == 'Skills'}>
-          Skills
-        </Tab>
-        <Tab
-          href="/backgrounds"
-          isActive={this.props.activeItem == 'Backgrounds'}
-        >
-          Backgrounds
-        </Tab>
-        <Tab href="/links" isActive={this.props.activeItem == 'Links'}>
-          Links
-        </Tab>
-        <Tab href="/hobbies" isActive={this.props.activeItem == 'Hobbies'}>
-          Hobbies
-        </Tab>
-      </Nav>
-    )
-  }
-}
+export default Tabs
 
 const Nav = styled.nav`
   width: 100%;

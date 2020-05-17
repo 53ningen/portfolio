@@ -2,16 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
 
-interface Props {
+type Props = {
   onClick?: (e: React.MouseEvent<HTMLElement>) => void
   icon: Icon
 }
 
-export default class IconButton extends React.Component<Props, {}> {
-  render() {
-    return <Wrapper>{this.props.icon}</Wrapper>
-  }
-}
+const IconButton: React.FC<Props> = (props) => <Wrapper>{props.icon}</Wrapper>
+
+export default IconButton
 
 const Wrapper = styled.div`
   width: 38px;

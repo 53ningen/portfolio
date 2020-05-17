@@ -1,31 +1,23 @@
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
 
-interface Props {
+type Props = {
   href: string
   isActive: boolean
 }
 
-interface States {
-  isActive: boolean
+const Tab: React.FC<Props> = (props) => {
+  return (
+    <Link href={props.href} replace>
+      <Wrapper isActive={props.isActive}>
+        <span>{props.children}</span>
+      </Wrapper>
+    </Link>
+  )
 }
 
-export default class Tab extends React.Component<Props, States> {
-  constructor(props: Props) {
-    super(props)
-    this.state = { isActive: props.isActive }
-  }
-  render() {
-    return (
-      <Link href={this.props.href} replace>
-        <Wrapper isActive={this.state.isActive}>
-          <span>{this.props.children}</span>
-        </Wrapper>
-      </Link>
-    )
-  }
-}
+export default Tab
 
 const Wrapper = styled.div<{ isActive: boolean }>`
   height: 52px;

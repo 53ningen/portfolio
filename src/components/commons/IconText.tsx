@@ -2,20 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import Item from './Icon'
 
-interface Props {
+type Props = {
   icon: Item
 }
 
-export default class IconText extends React.Component<Props, {}> {
-  render() {
-    return (
-      <IconTextWrapper>
-        <I>{this.props.icon}</I>
-        {this.props.children}
-      </IconTextWrapper>
-    )
-  }
-}
+const IconText: React.FC<Props> = (props) => (
+  <IconTextWrapper>
+    <I>{props.icon}</I>
+    {props.children}
+  </IconTextWrapper>
+)
+
+export default IconText
 
 const IconTextWrapper = styled.div`
   margin-right: 10px;
