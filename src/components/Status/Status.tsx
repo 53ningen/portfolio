@@ -2,12 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Status as StatusModel } from '../../models/Status'
 import AvatarIcon from '../commons/AvatorIcon'
-import {
-  FavoriteBorderIcon,
-  LinkIcon,
-  ReplyIcon,
-  RetweetIcon,
-} from '../commons/Icon'
 import IconText from '../commons/IconText'
 
 type Props = {
@@ -60,21 +54,21 @@ const Status: React.FC<Props> = (props) => {
         <TextWrapper>{props.status.text}</TextWrapper>
         <FooterWrapper>
           <IconWrapper>
-            <IconText icon={<ReplyIcon />}></IconText>
+            <IconText iconPath="images/svg/reply.svg" />
           </IconWrapper>
           <IconWrapper>
-            <IconText icon={<RetweetIcon />}>
+            <IconText iconPath="images/svg/repeat.svg">
               {props.status.retweetCount || ''}
             </IconText>
           </IconWrapper>
           <IconWrapper>
-            <IconText icon={<FavoriteBorderIcon />}>
+            <IconText iconPath="images/svg/favorite_border.svg">
               {' '}
               {props.status.favoriteCount || ''}
             </IconText>
           </IconWrapper>
           <IconWrapper>
-            <IconText icon={<LinkIcon />}></IconText>
+            <IconText iconPath="images/svg/link.svg" />
           </IconWrapper>
         </FooterWrapper>
       </DetailsWrapper>

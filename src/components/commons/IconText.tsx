@@ -1,14 +1,14 @@
 import React from 'react'
+import { ReactSVG } from 'react-svg'
 import styled from 'styled-components'
-import Item from './Icon'
 
 type Props = {
-  icon: Item
+  iconPath: string
 }
 
 const IconText: React.FC<Props> = (props) => (
   <IconTextWrapper>
-    <I>{props.icon}</I>
+    <I src={props.iconPath} />
     {props.children}
   </IconTextWrapper>
 )
@@ -31,6 +31,6 @@ const IconTextWrapper = styled.div`
   justify-content: flex-start;
 `
 
-const I = styled.span`
+const I = styled(ReactSVG)`
   margin-right: 5px;
 `

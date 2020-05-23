@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BellIcon, MailIcon } from '../commons/Icon'
 import IconButton from '../commons/IconButton'
 import TextButton from '../commons/TextButton'
 
@@ -12,11 +11,11 @@ const HeaderButtons: React.FC = (_) => (
         data-screen-name="@gomi_ningen"
         target="_blank"
       >
-        <IconButton icon={<MailIcon />} />
+        <IconButton iconPath="images/svg/mail.svg" />
       </a>
     </div>
     <div style={{ marginRight: '10px', marginBottom: '10px' }}>
-      <IconButton icon={<BellIcon />} />
+      <IconButton iconPath="images/svg/bell.svg" />
     </div>
     <div style={{ marginBottom: '10px' }}>
       <a

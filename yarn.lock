@@ -2141,7 +2141,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.8.4":
+"@babel/runtime@^7.8.4", "@babel/runtime@^7.9.6":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
   integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
@@ -2245,6 +2245,13 @@
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz#8da5c6530915653f3a1f38fd5f101d8c3f8079c5"
   integrity sha512-+iTbntw2IZPb/anVDbypzfQa+ay64MW0Zo8aJ8gZPWMMK6/OubMVb6lUPMagqjOPnmtauXnFCACVl3O7ogjeqQ==
+
+"@tanem/svg-injector@^8.0.50":
+  version "8.0.51"
+  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-8.0.51.tgz#b0a33057b4b5e9358fe8301e23f3db764d6b9a50"
+  integrity sha512-a+TnC7xheahEYgN9CG6cCi15e3ZvtVm9OcrF1u7qNAy5X1ubwD2eiEOUVon4m3n6c6LSdphr6q0XHgOu914q6g==
+  dependencies:
+    "@babel/runtime" "^7.9.6"
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -6360,6 +6367,15 @@ react-refresh@0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.1.tgz#5500506ad6fc891fdd057d0bf3581f9310abc6a2"
   integrity sha512-xZIKi49RtLUUSAZ4a4ut2xr+zr4+glOD5v0L413B55MPvlg4EQ6Ctx8PD4CmjlPGoAWmSCTmmkY59TErizNsow==
+
+react-svg@^11.0.23:
+  version "11.0.23"
+  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-11.0.23.tgz#95fea4626a93d9605ec9bd9a3736287a3bfa1ad8"
+  integrity sha512-elBGGJd2dPyTt/rKQy/JutIfm8ZSBlRi3GxAxl7USkidBoCIOefZO3HWIUtb09RkX3uEeh0VnGEzvuzOGwP5Gw==
+  dependencies:
+    "@babel/runtime" "^7.9.6"
+    "@tanem/svg-injector" "^8.0.50"
+    prop-types "^15.7.2"
 
 react@^16.13.0:
   version "16.13.1"

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Profile } from '../../models/Profile'
 import AvatorIcon from '../commons/AvatorIcon'
-import { CakeIcon, LinkIcon, LocationIcon, WorkIcon } from '../commons/Icon'
 import IconText from '../commons/IconText'
 import HeaderButtons from './HeaderButtons'
 
@@ -24,10 +23,16 @@ const HeaderInfo: React.FC<Props> = (props) => (
     </NamesWrapper>
     <Description>{props.profile.description}</Description>
     <IconTextsWrapper>
-      <IconText icon={<LocationIcon />}>{props.profile.location}</IconText>
-      <IconText icon={<WorkIcon />}>{props.profile.company}</IconText>
-      <IconText icon={<CakeIcon />}>{props.profile.birthday}</IconText>
-      <IconText icon={<LinkIcon />}>
+      <IconText iconPath="images/svg/location.svg">
+        {props.profile.location}
+      </IconText>
+      <IconText iconPath="images/svg/work.svg">
+        {props.profile.company}
+      </IconText>
+      <IconText iconPath="images/svg/cake.svg">
+        {props.profile.birthday}
+      </IconText>
+      <IconText iconPath="images/svg/link.svg">
         <a href={props.profile.url} target="_blank">
           {props.profile.displayUrl}
         </a>

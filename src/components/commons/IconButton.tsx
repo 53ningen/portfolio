@@ -1,13 +1,17 @@
 import React from 'react'
+import { ReactSVG } from 'react-svg'
 import styled from 'styled-components'
-import Icon from './Icon'
 
 type Props = {
   onClick?: (e: React.MouseEvent<HTMLElement>) => void
-  icon: Icon
+  iconPath: string
 }
 
-const IconButton: React.FC<Props> = (props) => <Wrapper>{props.icon}</Wrapper>
+const IconButton: React.FC<Props> = (props) => (
+  <Wrapper>
+    <ReactSVG src={props.iconPath} />
+  </Wrapper>
+)
 
 export default IconButton
 
@@ -28,5 +32,9 @@ const Wrapper = styled.div`
 
   &:hover {
     background-color: rgba(29, 161, 242, 0.1);
+  }
+
+  & div {
+    display: flex;
   }
 `
